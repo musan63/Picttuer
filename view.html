@@ -6,17 +6,20 @@
   </head>
   <body>
     <script type="text/javascript">
+      var num = 1;
       function addimg() {
-        document.write('<img src="./image/knzw01.jpg" width="100">');
+        document.write('<img src="./image/knzw0' + num + '.jpg" width="25%">');
         num++;
       }
-      setInterval(addimg, 100);
+      while(num < 6)
+        setInterval(addimg, 100);
     </script>
-
-    <img src="./image/knzw01.jpg" width="100">
+    <!--
+    <img src="./image/knzw01.jpg" width="50%">
     <img src="./image/knzw02.jpg" width="100">
     <img src="./image/knzw03.jpg" width="100">
     <img src="./image/knzw04.jpg" width="100">
     <img src="./image/knzw05.jpg" width="100">
+    -->
   </body>
 </html>
