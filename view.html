@@ -8,10 +8,11 @@
     <script type="text/javascript">
       var num = 1;
       function addimg() {
-        document.write('<img src="./image/knzw0' + num + '.jpg" width="100">');
+        document.write('<img onerror="console.log(\'失敗\')" src="./image/knzw0' + num + '.jpg" width="100" alt="empty">');
+        // onerror : 画像が読み込めなかったときにやる
         num++;
       }
-      //while(num < 6)
+      if(num < 6)
         setInterval(addimg, 100);
     </script>
     <!--
