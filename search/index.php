@@ -1,11 +1,7 @@
-
-
-
-
 <?php
-/*
+
 // OAuthライブラリの読み込み
-require "twitteroauth/autoload.php";
+require "../twitteroauth/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 //認証情報４つ
@@ -17,16 +13,33 @@ $accessTokenSecret = "OF4dPsGATZ1JHo5sgrj1uEvEZKHMfX0ZhQUPiHmllkPTl";
 //接続
 $connection = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
+// キーワードによるツイート検索
+// jsでいう + は php では . に対応
 /*
-//ツイート
-$res = $connection->post("statuses/update", array("status" => "テストメッセージ"));
+js
+  var moji = def;
+  "abc" + moji + "ghi"
+
+  abcdefghi
+
+php
+  $moji = def;
+  "abc".$moji."ghi"
+  "abc{$moji}ghi"
+
+
 */
 
-// キーワードによるツイート検索
-/*
-$tweets_params = ['q' => '夜景 filter:images' ,'count' => '10'];
+$word = "卒業式";
+$id = NULL;
+$amount = 10;
+
+$tweets_params = ['q' => {$word} ' ' {$id} ' filter:images' ,'count' => amount];
 $res = $connection->get('search/tweets', $tweets_params)->statuses;
 
+/*
 //レスポンス確認
 var_dump($res);
 */
+
+echo json_encode($res);

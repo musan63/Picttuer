@@ -1,0 +1,49 @@
+<script>
+
+    fetch('search').then((res) => {
+        return res.text();
+    }).then((text) => {
+
+
+        const tweets = JSON.parse(text);
+
+        console.log(tweets);
+
+
+
+        const mediaOK = [];
+
+        for (const tweet of tweets) {
+
+
+
+            if (tweet.entities.media) {
+
+                mediaOK.push(tweet);
+                /*
+                tweets = tweets.filter(function(tweet) {
+                  return false;
+                });
+                */
+
+                //console.log(tweet.entities.media);
+
+            } else {
+
+                console.log('メディアがないツイートです');
+
+            }
+
+
+            //      console.log(tweet);
+        }
+
+
+        console.log(mediaOK);
+
+        for (cur_tweet of mediaOK) {
+          var cur_tweet_url = cur_tweet.entities.media[0].media_url;
+          document.write('<img src=" ' + cur_tweet_url + '" width="30%">');
+        }
+    });
+</script>
