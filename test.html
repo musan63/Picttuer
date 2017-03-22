@@ -4,6 +4,7 @@
         return res.text();
     }).then((text) => {
 
+        console.log(text);
 
         const tweets = JSON.parse(text);
 
@@ -30,7 +31,8 @@
 
             } else {
 
-                console.log('メディアがないツイートです');
+                console.log('Object:' + tweet.length + ' entities/media: No such directory');
+                // 何番目のオブジェクトにないのか表示したいができず。
 
             }
 

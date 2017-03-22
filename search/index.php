@@ -30,11 +30,15 @@ php
 
 */
 
+/*
 $word = "卒業式";
 $id = NULL;
 $amount = 10;
+*/
 
-$tweets_params = ['q' => {$word} ' ' {$id} ' filter:images' ,'count' => amount];
+// $tweets_params = ['q' => {$word} ' ' {$id} ' filter:images' ,'count' => amount];
+// ['q' => '検索キーワード(Twitterルール)', 'count' => 表示数]
+$tweets_params = ['q' => '金沢 filter:images' ,'count' => 30];
 $res = $connection->get('search/tweets', $tweets_params)->statuses;
 
 /*
