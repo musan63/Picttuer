@@ -4,8 +4,6 @@
         return res.text();
     }).then((text) => {
 
-        console.log(text);
-
         const tweets = JSON.parse(text);
 
         console.log(tweets);
@@ -13,10 +11,9 @@
 
 
         const mediaOK = [];
+        var i = 0;
 
         for (const tweet of tweets) {
-
-
 
             if (tweet.entities.media) {
 
@@ -31,11 +28,13 @@
 
             } else {
 
-                console.log('Object:' + tweet.length + ' entities/media: No such directory');
+                console.log('Object:' + i + ' entities/media: No such directory');
+                // console.log('Object:' + tweet.length + ' entities/media: No such directory');
                 // 何番目のオブジェクトにないのか表示したいができず。
 
             }
 
+            i++;
 
             //      console.log(tweet);
         }

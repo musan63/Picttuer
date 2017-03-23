@@ -2,21 +2,55 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Picttuer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
   </head>
   <body>
-    <div>
-      キーワード
-      <input type="text" placeholder="キーワード">
+    <div class="container">
+      <form class="center-block">
+        <fieldset>
+          <legend>Picttuer</legend>
+          <p>検索条件を入力してください。</p>
+          <div class="form-group">
+            <label for="keyword">
+              キーワード
+            </label>
+            <input type="text" id="keyword" class="form-control" placeholder="キーワード" />
+          </div>
+          <div class="form-group">
+            <label for="hashtag">
+              ハッシュタグ
+            </label>
+            <input type="text" id="hashtag" class="form-control" placeholder="#ハッシュタグ" />
+          </div>
+          <div class="form-group">
+            <label for="accountId">
+              アカウントID
+            </label>
+            <input type="text" id="accountId" class="form-control" placeholder="@アカウントID" />
+          </div>
+
+          <!--
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="agreement" value="true" />
+              同意する
+            </label>
+          </div>
+         -->
+
+          <button type="submit" class="btn btn-primary" id="submit">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            検索する
+          </button>
+        </fieldset>
+      </form>
     </div>
-    <div>
-      ハッシュタグ
-      <input type="text" placeholder="#ハッシュタグ">
-    </div>
-    <div>
-      アカウント
-      <input type="text" placeholder="@アカウントID">
-    </div>
-    <input type="button" value="検索" onclick="location.href='view.html'">
   </body>
 </html>
