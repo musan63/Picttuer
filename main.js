@@ -2,15 +2,15 @@
 
 $(function() {
   const $keyword  = $('#keyword');
-  const $password  = $('#password');
-  const $agreement = $('#agreement');
+  const $hashtag  = $('#hashtag');
+  const $accountId = $('#accountId');
   const $submit    = $('#submit');
 
   // フォームチェック関数
   function isFormValid() {
     const isValid = $keyword.val().trim()
-      && $password.val().trim()
-      && $agreement.prop('checked');
+      || $hashtag.val().trim()
+      || $accountId.val().trim();
 
     $submit.attr("disabled", !isValid);
   }
