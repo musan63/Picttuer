@@ -6,35 +6,29 @@ $(function() {
   const $accountId = $('#accountId');
   const $submit    = $('#submit');
 
-/*
-  // フォームチェック関数
-  function isFormValid() {
-    const isValid = $keyword.val().trim()
-      || $hashtag.val().trim()
-      || $accountId.val().trim();
-
-    $submit.attr("disabled", !isValid);
-  }
-
-  // ページロード時にチェックを行う
-  isFormValid();
-
-  // フォームコントロールのイベントハンドラ
-  $('input').on('keyup change', function() {
-    isFormValid();
-  });
-  */
-
   function formval(id) {
-    if(id.val() == "")
+    if(id["0"].value == "")
       return null;
     else
-      return id.val();
+      return id["0"].value;
   }
 
-  // フォームが送信された時にアラートを表示する
+
+  // フォームが送信された時
   $('form').on('submit', (e) => {
     e.preventDefault();
-    console.log( "keyword : " + formval($keyword) + "\n" + "hashtag : " + formval($hashtag) + "\n" + "accountId : " + formval($accountId) );
+    $keyword.val = formval($keyword);
+    $hashtag.val = formval($hashtag);
+    $accountId.val = formval($accountId);
+    console.log( "keyword : " + $keyword.val + "\n" + "hashtag : " + $hashtag.val + "\n" + "accountId : " + $accountId.val );
   });
+});
+
+$.ajax({
+    type: "POST",
+    url: "./search/index.php",
+    data: '$keyword&$hashtag&$accountId',
+    success: function() {
+            alert('success');
+    }
 });
