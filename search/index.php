@@ -38,7 +38,7 @@ $amount = 10;
 
 // $tweets_params = ['q' => {$word} ' ' {$id} ' filter:images' ,'count' => amount];
 // ['q' => '検索キーワード(Twitterルール)', 'count' => 表示数]
-$tweets_params = ['q' => '高専 filter:images' ,'count' => 30];
+$tweets_params = ['q' => 'ポケモン filter:images' ,'count' => 30];
 $res = $connection->get('search/tweets', $tweets_params)->statuses;
 
 /*
