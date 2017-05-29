@@ -13,32 +13,11 @@ $accessTokenSecret = "OF4dPsGATZ1JHo5sgrj1uEvEZKHMfX0ZhQUPiHmllkPTl";
 //接続
 $connection = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
-// キーワードによるツイート検索
-// jsでいう + は php では . に対応
-/*
-js
-  var moji = def;
-  "abc" + moji + "ghi"
-
-  abcdefghi
-
-php
-  $moji = def;
-  "abc".$moji."ghi"
-  "abc{$moji}ghi"
-
-
-*/
-
-/*
-$word = "卒業式";
-$id = NULL;
-$amount = 10;
-*/
+$sea = localStorage::loadPost('sea');
 
 // $tweets_params = ['q' => {$word} ' ' {$id} ' filter:images' ,'count' => amount];
 // ['q' => '検索キーワード(Twitterルール)', 'count' => 表示数]
-$tweets_params = ['q' => 'ポケモン filter:images' ,'count' => 30];
+$tweets_params = ['q' => $sea.' filter:images' ,'count' => 30];
 $res = $connection->get('search/tweets', $tweets_params)->statuses;
 
 /*
